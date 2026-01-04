@@ -1,0 +1,12 @@
+.Item{
+  background-color: rgb(197, 194, 194);
+  border-radius: 4px;
+  
+}
+.Span{
+  color: #ef1616;
+  font-weight: 600;
+}
+.btn{
+ float: right;
+}
