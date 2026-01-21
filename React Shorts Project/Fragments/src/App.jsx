@@ -28,6 +28,10 @@ function App() {
     }
   };
 
+  const colorChanger = (e) => {
+    console.log(e);
+  };
+
   return (
     <>
       <Container>
