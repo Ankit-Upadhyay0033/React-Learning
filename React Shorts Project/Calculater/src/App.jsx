@@ -5,13 +5,24 @@ import Btn from "./Components/Btn";
 import { useState } from "react";
 
 function App() {
-  let [calVal, setCalVal] = useState("");
+  const [calVal, setCalVal] = useState("");
+  const onButtonClick = (buttonText) => {
+    if (buttonText === "C") {
+      setCalVal("");
+    } else if (buttonText === "=") {
+      const result = eval(calVal);
+      setCalVal(result);
+    } else {
+      const newDisplayValue = calVal + buttonText;
+      setCalVal(newDisplayValue);
+    }
+  };
 
   return (
     <>
       <div id={style.calculater}>
         <Display displayValue={calVal} />
-        <Btn onButtonClick={() => console.log("btn clicked")} />
+        <Btn onButtonClick={onButtonClick} />
       </div>
     </>
   );
