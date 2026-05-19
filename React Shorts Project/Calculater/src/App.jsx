@@ -5,6 +5,7 @@ import Btn from "./Components/Btn";
 import { useState } from "react";
 
 function App() {
+  //button working concept add
   const [calVal, setCalVal] = useState("");
   const onButtonClick = (buttonText) => {
     if (buttonText === "C") {
