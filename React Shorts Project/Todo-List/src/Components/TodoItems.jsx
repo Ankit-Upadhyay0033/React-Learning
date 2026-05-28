@@ -5,8 +5,8 @@ const TodoItems = ({ items }) => {
   return (
     <>
       <div className={style.container}>
-        {items.map((item) => (
-          <TodoItem TodoName={item.name} TodoDate={item.dueDate} />
+        {items.map((item, index) => (
+          <TodoItem key={index} TodoName={item.name} TodoDate={item.dueDate} />
         ))}
       </div>
     </>

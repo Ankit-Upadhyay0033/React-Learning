@@ -2,8 +2,8 @@ import style from "./AddTodo.module.css";
 
 function Addtodo() {
   return (
-    <div class="row">
-      <div class="col-6">
+    <div className="row">
+      <div className="col-6">
         <input
           className={style.input}
           type="text"
@@ -12,11 +12,11 @@ function Addtodo() {
           placeholder="Enter todo here"
         />
       </div>
-      <div class="col-4">
+      <div className="col-4">
         <input className={style.input} type="date" name="" id="" />
       </div>
-      <div class="col-2">
-        <button type="button" class="btn btn-success">
+      <div className="col-2">
+        <button type="button" className="btn btn-success">
           Add
         </button>
       </div>
