@@ -1,8 +1,6 @@
-#calculater{
-   border: 1px solid rgb(42, 40, 40) ;
-    width: 240px;
-    border-radius: 4px;
+#calculater {
+  border: 1px solid rgb(42, 40, 40);
+  width: 240px;
+  border-radius: 4px;
+  margin: 10px;
 }
-
-
-

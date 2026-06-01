@@ -1,15 +1,17 @@
-function TodoItem({ TodoName, TodoDate }) {
+function TodoItem({ TodoName, TodoDate, onDeleteClick }) {
   return (
     <>
-      <div className="container">
-        <div className="row Row1">
-          <div className="col-6">{TodoName}</div>
-          <div className="col-4">{TodoDate}</div>
-          <div className="col-2">
-            <button type="button" className="btn btn-danger">
-              Delete
-            </button>
-          </div>
+      <div className="row ">
+        <div className="col-6">{TodoName}</div>
+        <div className="col-4">{TodoDate}</div>
+        <div className="col-2">
+          <button
+            type="button"
+            className="btn btnr btn-danger"
+            onClick={() => onDeleteClick(TodoName)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </>

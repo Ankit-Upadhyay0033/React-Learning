@@ -1,8 +1,8 @@
 import style from "./App.module.css";
-import "./App.css";
 import Display from "./Components/Display";
 import Btn from "./Components/Btn";
 import { useState } from "react";
+import { evaluate } from "mathjs";
 
 function App() {
   //button working concept add
@@ -11,7 +11,7 @@ function App() {
     if (buttonText === "C") {
       setCalVal("");
     } else if (buttonText === "=") {
-      const result = eval(calVal);
+      const result = evaluate(calVal);
       setCalVal(result);
     } else {
       const newDisplayValue = calVal + buttonText;

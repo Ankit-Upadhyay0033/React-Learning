@@ -1,5 +1,6 @@
-.Food-Heading{
+.Food-Heading {
   background-color: silver;
-  color: brown;
+  color: rgb(80, 48, 48);
   border-radius: 4px;
+  text-align: center;
 }

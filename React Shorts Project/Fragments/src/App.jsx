@@ -24,7 +24,6 @@ function App() {
       e.target.value = "";
       let newItems = [...foodItems, newFoodItem];
       setFoodItems(newItems);
-      console.log(newFoodItem);
     }
   };
 
@@ -36,7 +35,6 @@ function App() {
     <>
       <Container>
         <h1 className="Food-Heading">Healthy Food</h1>
-
         <FoodInput handleOnKeyDown={onKeyDown} />
         <ErrorMsg items={foodItems} />
         <FoodItems items={foodItems} />
