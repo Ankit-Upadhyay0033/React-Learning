@@ -1,23 +1,35 @@
 import style from "./AddTodo.module.css";
-import { useState } from "react";
+import { useRef } from "react";
 import { IoMdAdd } from "react-icons/io";
+import { useContext } from "react";
+import { todoItemsContext } from "../store/todo-items-store";
 
-function Addtodo({ oneNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [todoDate, setTodoDate] = useState("");
+function Addtodo() {
+  const { addNewItem } = useContext(todoItemsContext);
+  // const [todoName, setTodoName] = useState("");
+  // const [todoDate, setTodoDate] = useState("");
 
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-  const handleDateChange = (event) => {
-    setTodoDate(event.target.value);
-  };
+  const todoNameElement = useRef();
+  const todoDateElement = useRef();
+
+  // const handleNameChange = (event) => {
+  //   setTodoName(event.target.value);
+  //   noOfClicks.current += 1;
+  // };
+  // const handleDateChange = (event) => {
+  //   setTodoDate(event.target.value);
+  //   console.log(`noOfUpdates are : ${noOfClicks.current}`);
+  // };
 
   const handleAddButtinClick = (event) => {
     event.preventDefault();
-    oneNewItem(todoName, todoDate);
-    setTodoName("");
-    setTodoDate("");
+    const todoName = todoNameElement.current.value;
+    todoNameElement.current.value = "";
+    const todoDate = todoDateElement.current.value;
+    todoDateElement.current.value = "";
+    addNewItem(todoName, todoDate);
+    // setTodoName("");
+    // setTodoDate("");
   };
 
   return (
@@ -26,22 +38,23 @@ function Addtodo({ oneNewItem }) {
         <div className="col-6">
           <input
             className={style.input}
+            ref={todoNameElement}
             type="text"
             name=""
             id=""
             placeholder="Enter todo here"
-            onChange={handleNameChange}
-            value={todoName}
+            // onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
           <input
             className={style.input}
+            ref={todoDateElement}
             type="date"
             name=""
             id=""
-            onChange={handleDateChange}
-            value={todoDate}
+            // onChange={handleDateChange}
+            // value={todoDate}
           />
         </div>
         <div className="col-2">
