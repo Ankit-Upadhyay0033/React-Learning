@@ -2,9 +2,9 @@ import { createContext } from "react";
 import { useReducer } from "react";
 
 export const todoItemsContext = createContext({
-  todoItems: () => [],
-  addNewItem: () => [],
-  deleteItem: () => [],
+  todoItems: [],
+  addNewItem: () => {},
+  deleteItem: () => {},
 });
 
 const todoItemsReducer = (currentTodoItem, action) => {
