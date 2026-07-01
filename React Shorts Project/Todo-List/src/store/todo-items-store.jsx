@@ -23,7 +23,7 @@ const todoItemsReducer = (currentTodoItem, action) => {
   return newTodoItem;
 };
 
-const todoItemsContextProvider = ({ children }) => {
+const TodoItemsContextProvider = ({ children }) => {
   //const [todoItems, setTodoItems] = useState([]);
   const [todoItems, dispatchTodoItems] = useReducer(todoItemsReducer, []);
 
@@ -64,4 +64,4 @@ const todoItemsContextProvider = ({ children }) => {
     </todoItemsContext.Provider>
   );
 };
-export default todoItemsContextProvider;
+export default TodoItemsContextProvider;
